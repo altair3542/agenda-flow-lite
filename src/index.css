@@ -1,0 +1,157 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #162033;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f4f7fb;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.app-shell {
+  width: min(100%, 960px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin-bottom: 4px;
+  color: #52617a;
+  font-size: 0.9rem;
+}
+
+.app-header h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.header-badge {
+  border-radius: 999px;
+  background: #162033;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.appointment-section {
+  display: grid;
+  gap: 16px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-heading span {
+  color: #52617a;
+}
+
+.appointment-list {
+  display: grid;
+  gap: 14px;
+}
+
+.appointment-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 20px;
+  align-items: center;
+  border: 1px solid #dbe3ef;
+  border-radius: 18px;
+  background: #fff;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(22, 32, 51, 0.08);
+}
+
+.appointment-main {
+  display: grid;
+  gap: 4px;
+}
+
+.appointment-main h2 {
+  font-size: 1.15rem;
+}
+
+.appointment-main p {
+  color: #52617a;
+}
+
+.appointment-meta {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  color: #52617a;
+}
+
+.appointment-meta strong {
+  color: #162033;
+  font-size: 1.1rem;
+}
+
+.status-badge {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-confirmed {
+  background: #dff6e7;
+  color: #17643a;
+}
+
+.status-pending {
+  background: #fff1d6;
+  color: #8a5b00;
+}
+
+.status-completed {
+  background: #e5edff;
+  color: #274690;
+}
+
+@media (max-width: 640px) {
+  .app-header,
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-card {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-meta {
+    justify-items: start;
+  }
+}
