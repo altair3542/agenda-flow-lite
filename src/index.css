@@ -1,7 +1,5 @@
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
   color: #162033;
   background: #f4f7fb;
   font-synthesis: none;
@@ -18,6 +16,17 @@ body {
   background: #f4f7fb;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
 h1,
 h2,
 p {
@@ -25,7 +34,7 @@ p {
 }
 
 .app-shell {
-  width: min(100%, 960px);
+  width: min(100%, 1120px);
   min-height: 100vh;
   margin: 0 auto;
   padding: 32px 20px;
@@ -42,20 +51,143 @@ p {
 .eyebrow {
   margin-bottom: 4px;
   color: #52617a;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .app-header h1 {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.header-description {
+  margin-top: 6px;
+  color: #52617a;
 }
 
 .header-badge {
   border-radius: 999px;
   background: #162033;
   color: #fff;
-  padding: 8px 14px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: 9px 15px;
+  font-weight: 700;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.appointment-form,
+.filters-card,
+.empty-state,
+.appointment-card {
+  border: 1px solid #dbe3ef;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(22, 32, 51, 0.08);
+}
+
+.appointment-form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.form-heading {
+  margin-bottom: 4px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: #33415c;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid #ccd6e5;
+  border-radius: 14px;
+  background: #f8fafd;
+  color: #162033;
+  padding: 11px 12px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #274690;
+  box-shadow: 0 0 0 4px rgba(39, 70, 144, 0.12);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.error-message {
+  color: #b42318;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.primary-button,
+.danger-button,
+.filter-button {
+  border: 0;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.primary-button {
+  background: #274690;
+  color: #fff;
+  padding: 12px 16px;
+}
+
+.danger-button {
+  background: #fde2e2;
+  color: #9b1c1c;
+  padding: 10px 13px;
+}
+
+.appointments-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.filters-card {
+  padding: 16px;
+}
+
+.filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  background: #edf2fb;
+  color: #274690;
+  padding: 9px 12px;
+}
+
+.filter-button.active {
+  background: #274690;
+  color: #fff;
 }
 
 .appointment-section {
@@ -80,29 +212,29 @@ p {
 }
 
 .appointment-card {
-  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 12px 20px;
-  align-items: center;
-  border: 1px solid #dbe3ef;
-  border-radius: 18px;
-  background: #fff;
+  gap: 14px 20px;
+  align-items: start;
   padding: 18px;
-  box-shadow: 0 12px 30px rgba(22, 32, 51, 0.08);
 }
 
 .appointment-main {
   display: grid;
-  gap: 4px;
+  gap: 7px;
 }
 
 .appointment-main h2 {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
 }
 
 .appointment-main p {
   color: #52617a;
+}
+
+.appointment-notes {
+  border-left: 3px solid #dbe3ef;
+  padding-left: 10px;
 }
 
 .appointment-meta {
@@ -114,15 +246,15 @@ p {
 
 .appointment-meta strong {
   color: #162033;
-  font-size: 1.1rem;
+  font-size: 1.12rem;
 }
 
 .status-badge {
   width: fit-content;
   border-radius: 999px;
   padding: 5px 10px;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .status-confirmed {
@@ -140,10 +272,46 @@ p {
   color: #274690;
 }
 
+.status-cancelled {
+  background: #fde2e2;
+  color: #9b1c1c;
+}
+
+.card-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #edf2fb;
+  padding-top: 14px;
+}
+
+.card-actions label {
+  width: min(100%, 240px);
+}
+
+.empty-state {
+  padding: 28px;
+  text-align: center;
+}
+
+.empty-state p {
+  margin-top: 8px;
+  color: #52617a;
+}
+
+@media (max-width: 860px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .app-header,
-  .section-heading {
-    align-items: flex-start;
+  .section-heading,
+  .card-actions {
+    align-items: stretch;
     flex-direction: column;
   }
 
@@ -153,5 +321,9 @@ p {
 
   .appointment-meta {
     justify-items: start;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }
