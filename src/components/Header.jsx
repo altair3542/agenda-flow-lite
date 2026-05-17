@@ -2,7 +2,7 @@ export function Header() {
   return (
     <header className="app-header">
       <div>
-        <p className="eyebrow">Agenda del dia</p>
+        <p className="eyebrow">Por favor, lean... gracias</p>
         <h1>AgendaFlow Lite</h1>
       </div>
 
