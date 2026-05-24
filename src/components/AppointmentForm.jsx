@@ -8,7 +8,7 @@ const initialFormData = {
   notes: '',
 };
 
-export function AppointmentForm({ onCreateAppointment }) {
+export function AppointmentForm({ isSaving, onCreateAppointment }) {
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState({});
 
@@ -136,8 +136,8 @@ export function AppointmentForm({ onCreateAppointment }) {
         />
       </label>
 
-      <button type="submit" className="primary-button">
-        Agregar cita
+      <button type="submit" className="primary-button" disabled={isSaving}>
+        {isSaving ? 'Guardando...' : 'Agregar cita'}
       </button>
     </form>
   );

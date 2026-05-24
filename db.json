@@ -1,0 +1,41 @@
+{
+  "appointments": [
+    {
+      "id": "1",
+      "client": "Laura Gómez",
+      "service": "Corte y barba",
+      "date": "2026-05-17",
+      "time": "08:00",
+      "notes": "Cliente frecuente. Prefiere atención rápida.",
+      "status": "cancelled"
+    },
+    {
+      "id": "2",
+      "client": "Carlos Ruiz",
+      "service": "Valoración inicial",
+      "date": "2026-05-17",
+      "time": "09:30",
+      "notes": "Primera visita.",
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "client": "Diana Torres",
+      "service": "Mantenimiento preventivo",
+      "date": "2026-05-17",
+      "time": "11:00",
+      "notes": "Traer historial del servicio anterior.",
+      "status": "completed"
+    },
+    {
+      "client": "Samuel VueltasBravas",
+      "service": "Solucionar una vueltica",
+      "date": "2026-05-31",
+      "time": "08:00",
+      "notes": "que le paso, mi papacho en cristo jesus.",
+      "status": "pending",
+      "id": "XpKOUbxOFg0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
